@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Medum</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
+    <string name="hintusername">Nombre de usuario</string>
+    <string name="hintpassword">Contraseña</string>
+    <string name="buttonlogin">Login</string>
+    <string name="dontaccount">No tienes cuenta?, </string>
+    <string name="createaccount">crea una aquí</string>
+    <string name="hintmail">Correo</string>
+    <string name="hintname">Nombre</string>
+    <string name="hintuser">Usuario</string>
+    <string name="hintrepeatpassword">Confirmar contraseña</string>
+    <string name="buttonjoin">Unete</string>
+    <string name="toolbartittle">Crear cuenta</string>
+    <string name="description">532m^2 - 5 recamaras - Patio</string>
+    <string name="buscar_tab">Buscar</string>
+    <string name="fav_tab">Favoritos</string>
+    <string name="home_tab">Inicio</string>
+    <string name="profile_tab">Perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Chito bb</string>
+    <string name="transition_picture">transition_picture</string>
+</resources>

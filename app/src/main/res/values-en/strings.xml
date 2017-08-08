@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Medum</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
+    <string name="hintusername">Username</string>
+    <string name="hintpassword">Password</string>
+    <string name="buttonlogin">Login</string>
+    <string name="dontaccount">Dont have an account?, </string>
+    <string name="createaccount">sign up here</string>
+    <string name="hintmail">Email</string>
+    <string name="hintname">Name</string>
+    <string name="hintuser">User</string>
+    <string name="hintrepeatpassword">Confirm password</string>
+    <string name="buttonjoin">Join us</string>
+    <string name="toolbartittle">Create account</string>
+    <string name="description">532m^2 - 5 Bedroom - Yard</string>
+    <string name="buscar_tab">Search</string>
+    <string name="fav_tab">Favorites</string>
+    <string name="home_tab">Home</string>
+    <string name="profile_tab">Profile</string>
+    <string name="username">Chito bb</string>
+</resources>
