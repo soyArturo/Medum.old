@@ -49,7 +49,11 @@ public class HomeFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                NewPostFragment newPostFragment = new NewPostFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container,newPostFragment)
+                        .addToBackStack(null)
+                        .commit();
             }
         });
         return view;
