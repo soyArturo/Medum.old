@@ -18,6 +18,12 @@
         <item name="android:textColor">@android:color/white</item>
     </style>
 
+    <style name="RaisedButtonFB" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/FB</item>
+        <item name="colorControlHighlight">@color/FBH</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
     <style name="Edittextwhite" parent="TextAppearance.AppCompat">
         <item name="android:textColorHint">@android:color/white</item>
         <item name="android:textSize">22sp</item>

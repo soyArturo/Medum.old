@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -31,10 +32,22 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:support-v4:26.+'
     compile 'com.roughike:bottom-bar:2.3.1'
+    compile 'com.google.android.gms:play-services:11.0.4'
     compile 'com.google.android.gms:play-services-maps:11.0.4'
     compile 'com.github.arimorty:floatingsearchview:2.1.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'com.zoonref:simple-view-behavior:1.0'
+    compile 'com.google.firebase:firebase-core:11.0.1'
+    compile 'com.google.firebase:firebase-auth:11.0.1'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
+    compile 'com.google.firebase:firebase-database:10.0.1'
+    compile 'com.google.firebase:firebase-storage:10.0.1'
     testCompile 'junit:junit:4.12'
 }
+
+
+
+
+
+apply plugin: 'com.google.gms.google-services'

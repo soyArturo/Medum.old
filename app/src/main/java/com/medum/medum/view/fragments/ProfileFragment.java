@@ -1,6 +1,7 @@
 package com.medum.medum.view.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +11,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.medum.medum.LoginActivity;
 import com.medum.medum.R;
 import com.medum.medum.adapter.PictureAdapterRecyclerView;
 import com.medum.medum.model.Picture;
@@ -20,8 +26,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment implements View.OnClickListener{
 
+    private FirebaseAuth mAuth;
+
+    private TextView username;
+    private ImageView logout;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -33,6 +43,23 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
+        mAuth = FirebaseAuth.getInstance();
+
+        if(mAuth.getCurrentUser()==null){
+            getFragmentManager().popBackStack();
+
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+        }
+
+        FirebaseUser user = mAuth.getCurrentUser();
+        username = (TextView) view.findViewById(R.id.usernameprofile);
+        logout = (ImageView) view.findViewById(R.id.logout);
+
+        username.setText(user.getEmail());
+
+        logout.setOnClickListener(this);
+
         showtoolbar("",false,view);
         RecyclerView cardsRecycler = (RecyclerView) view.findViewById(R.id.cardrecycler);
 
@@ -62,4 +89,12 @@ public class ProfileFragment extends Fragment {
     }
 
 
+    @Override
+    public void onClick(View view) {
+        if(view == logout){
+            mAuth.signOut();
+            getFragmentManager().popBackStack();
+            startActivity(new Intent(getActivity(),LoginActivity.class));
+        }
+    }
 }

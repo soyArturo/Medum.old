@@ -23,4 +23,5 @@
     <string name="username">Chito bb</string>
     <string name="transition_picture">transition_picture</string>
     <string name="tomar_foto">Tomar Foto</string>
+    <string name="hintlastname">Apellidos</string>
 </resources>
