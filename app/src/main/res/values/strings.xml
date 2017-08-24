@@ -17,6 +17,20 @@
     <string name="fav_tab">Favoritos</string>
     <string name="home_tab">Inicio</string>
     <string name="profile_tab">Perfil</string>
+    <string name="house_prompt">Que deseas vender?</string>
+
+
+    <array name="typehouses">
+        <item>Casa</item>
+        <item>Departamento</item>
+        <item>Terreno</item>
+        <item>Loft</item>
+    </array>
+
+    <array name="type">
+        <item>Renta</item>
+        <item>Venta</item>
+    </array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

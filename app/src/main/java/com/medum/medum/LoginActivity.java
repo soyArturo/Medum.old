@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,7 +22,6 @@ import com.medum.medum.view.CreateAccountActivity;
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button signin;
-    private com.google.android.gms.common.SignInButton signInButton;
     private AppCompatEditText textmail;
     private AppCompatEditText textpassword;
     private GoogleApiClient mGoogleApiClient;
@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textmail = (AppCompatEditText) findViewById(R.id.username);
         textpassword = (AppCompatEditText) findViewById(R.id.password);
         signin = (Button) findViewById(R.id.login);
-        signInButton = (com.google.android.gms.common.SignInButton) findViewById(R.id.loginG);
+
 
         progressDialog = new ProgressDialog(this);
 

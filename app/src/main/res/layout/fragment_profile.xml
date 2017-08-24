@@ -82,7 +82,7 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/logout"
+                    android:background="@drawable/ic_action_settings"
                     />
             </LinearLayout>
 

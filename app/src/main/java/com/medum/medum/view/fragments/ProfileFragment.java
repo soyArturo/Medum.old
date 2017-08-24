@@ -20,6 +20,7 @@ import com.medum.medum.LoginActivity;
 import com.medum.medum.R;
 import com.medum.medum.adapter.PictureAdapterRecyclerView;
 import com.medum.medum.model.Picture;
+import com.medum.medum.view.ProfileDetailsActivity;
 
 import java.util.ArrayList;
 
@@ -92,9 +93,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         if(view == logout){
-            mAuth.signOut();
-            getFragmentManager().popBackStack();
-            startActivity(new Intent(getActivity(),LoginActivity.class));
+            startActivity(new Intent(getActivity(), ProfileDetailsActivity.class));
         }
     }
 }

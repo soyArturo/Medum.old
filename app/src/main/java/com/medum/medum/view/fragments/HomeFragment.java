@@ -1,6 +1,7 @@
 package com.medum.medum.view.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -14,14 +15,19 @@ import android.view.ViewGroup;
 
 import com.medum.medum.R;
 import com.medum.medum.adapter.PictureAdapterRecyclerView;
+import com.medum.medum.model.House;
 import com.medum.medum.model.Picture;
+import com.medum.medum.view.NewPostActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
+
+    List<House> houses;
 
 
     public HomeFragment() {
@@ -45,15 +51,13 @@ public class HomeFragment extends Fragment {
         PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buildPict(),R.layout.cardview_picture,getActivity());
         cardsRecycler.setAdapter(pictureAdapterRecyclerView);
 
+        houses = new ArrayList<>();
+
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NewPostFragment newPostFragment = new NewPostFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.container,newPostFragment)
-                        .addToBackStack(null)
-                        .commit();
+                startActivity(new Intent(getActivity(), NewPostActivity.class));
             }
         });
         return view;

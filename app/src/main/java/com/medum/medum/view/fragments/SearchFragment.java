@@ -70,7 +70,7 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback {
 
         googleMap.addMarker(new MarkerOptions().position(new LatLng(32.4823585,-116.9557446)).title("Casa en venta 2").snippet("Descripcion de la casa"));
 
-        CameraPosition house = CameraPosition.builder().target(new LatLng(32.4800632,-116.957895)).zoom(16).bearing(8).tilt(45).build();
+        CameraPosition house = CameraPosition.builder().target(new LatLng(32.4800632,-116.957895)).zoom(18).bearing(8).tilt(45).build();
 
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(house));
     }

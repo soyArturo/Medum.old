@@ -23,6 +23,11 @@
         <item name="colorControlHighlight">@color/FBH</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <style name="RaisedButtonG" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="colorControlHighlight">@color/GH</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
     <style name="Edittextwhite" parent="TextAppearance.AppCompat">
         <item name="android:textColorHint">@android:color/white</item>

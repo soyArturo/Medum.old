@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "63225974035",
+    "firebase_url": "https://medum-490a6.firebaseio.com",
+    "project_id": "medum-490a6",
+    "storage_bucket": "medum-490a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63225974035:android:a06b697eb8f6e7ec",
+        "android_client_info": {
+          "package_name": "com.medum.medum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63225974035-r6uf2e1eter4069c3jcdcu5j9kiian2k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medum.medum",
+            "certificate_hash": "c6fd89d967cd1541aeb9415aa393baea51e34e9d"
+          }
+        },
+        {
+          "client_id": "63225974035-37s2u8ljktoha3tp3gls06daabnt0v3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGdD9dtBRUE9pg92hOyNU55K2ZRHWegIM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "63225974035-mofdqire0tu14q20ovlqn6ajq385rr22.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com"
+              }
+            },
+            {
+              "client_id": "63225974035-37s2u8ljktoha3tp3gls06daabnt0v3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63225974035:android:9364ec9c4ad00734",
+        "android_client_info": {
+          "package_name": "com.medum.chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63225974035-37s2u8ljktoha3tp3gls06daabnt0v3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGdD9dtBRUE9pg92hOyNU55K2ZRHWegIM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

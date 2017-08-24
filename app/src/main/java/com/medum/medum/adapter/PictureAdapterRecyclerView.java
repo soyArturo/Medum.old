@@ -90,6 +90,8 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
             pricecard = (TextView) itemView.findViewById(R.id.price);
             descriptioncard = (TextView) itemView.findViewById(R.id.description);
             timecard = (TextView) itemView.findViewById(R.id.timecard);
+
+
         }
     }
 }
