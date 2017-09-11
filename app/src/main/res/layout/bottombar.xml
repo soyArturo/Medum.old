@@ -6,7 +6,8 @@
     android:layout_height="56dp"
     android:layout_alignParentBottom="true"
     android:layout_gravity="bottom|end"
-    app:bb_inActiveTabColor="@android:color/white"
+    app:bb_inActiveTabColor="@android:color/darker_gray"
     app:bb_activeTabColor="@android:color/white"
     app:bb_tabXmlResource="@xml/bottombar_tabs"
+
     />

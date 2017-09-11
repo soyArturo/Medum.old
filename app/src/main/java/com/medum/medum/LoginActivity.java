@@ -9,6 +9,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -16,16 +17,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.medum.medum.view.ContainerActivity;
 import com.medum.medum.view.CreateAccountActivity;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button signin;
-    private AppCompatEditText textmail;
-    private AppCompatEditText textpassword;
+    private EditText textmail;
+    private EditText textpassword;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     private ProgressDialog progressDialog;
 
 
@@ -42,8 +45,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(new Intent(getApplicationContext(), ContainerActivity.class));
         }
 
-        textmail = (AppCompatEditText) findViewById(R.id.username);
-        textpassword = (AppCompatEditText) findViewById(R.id.password);
+        textmail = (EditText) findViewById(R.id.username);
+        textpassword = (EditText) findViewById(R.id.password);
         signin = (Button) findViewById(R.id.login);
 
 

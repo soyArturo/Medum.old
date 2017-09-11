@@ -4,20 +4,20 @@
         id="@+id/tab_search"
         icon="@drawable/ic_search"
         title="@string/buscar_tab"
-        barColorWhenSelected="@color/colorPrimary"/>
+        barColorWhenSelected="@color/gray"/>
     <tab
         id="@+id/tab_fav"
-        icon="@drawable/myfav"
+        icon="@drawable/fav_selected"
         title="@string/fav_tab"
-        barColorWhenSelected="@color/colorPrimary"/>
+        barColorWhenSelected="#EB0029"/>
     <tab
         id="@+id/tab_home"
         icon="@drawable/ic_home"
         title="@string/home_tab"
-        barColorWhenSelected="@color/colorPrimary"/>
+        barColorWhenSelected="@color/gray"/>
     <tab
         id="@+id/tab_profile"
         icon="@drawable/ic_profile"
         title="@string/profile_tab"
-        barColorWhenSelected="@color/colorPrimary"/>
+        barColorWhenSelected="@color/gray"/>
 </tabs>

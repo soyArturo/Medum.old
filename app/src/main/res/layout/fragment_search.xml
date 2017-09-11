@@ -6,8 +6,8 @@
     tools:context="com.medum.medum.view.fragments.SearchFragment">
 
     <com.google.android.gms.maps.MapView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/map"/>
     <com.arlib.floatingsearchview.FloatingSearchView
         android:id="@+id/floating_search_view"

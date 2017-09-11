@@ -1,9 +1,12 @@
 package com.medum.medum.view;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ProgressBar;
 
 import com.medum.medum.LoginActivity;
 import com.medum.medum.R;
@@ -13,12 +16,18 @@ import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private ProgressBar progressBar;
+
     private static final long SPLASH_SCREEN_DELAY = 3000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        progressBar.setVisibility(progressBar.VISIBLE);
+        progressBar.getIndeterminateDrawable().setColorFilter(Color.WHITE, PorterDuff.Mode.MULTIPLY);
 
         TimerTask task = new TimerTask() {
             @Override

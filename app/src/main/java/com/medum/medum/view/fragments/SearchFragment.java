@@ -1,14 +1,23 @@
 package com.medum.medum.view.fragments;
 
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.gms.location.LocationListener;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -24,11 +33,15 @@ import com.medum.medum.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends Fragment implements OnMapReadyCallback {
+public class SearchFragment extends Fragment implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mapa;
     MapView mMapView;
     View mView;
+    Marker marcador;
+    LatLng mycoo;
+    LocationManager locationManager;
+    private boolean permissionGranted;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -42,7 +55,7 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mView= inflater.inflate(R.layout.fragment_search, container, false);
+        mView = inflater.inflate(R.layout.fragment_search, container, false);
         return mView;
     }
 
@@ -51,7 +64,7 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState);
 
         mMapView = (MapView) mView.findViewById(R.id.map);
-        if (mMapView != null){
+        if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();
             mMapView.getMapAsync(this);
@@ -61,17 +74,48 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(getContext());
-        mapa=googleMap;
+        miUbicacion();
+        mapa = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+    }
 
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(32.4800632,-116.957895)).title("Casa en venta").snippet("Descripcion de la casa"));
+    private void agregarMarcador(double lat, double lng) {
+        LatLng coordenadas = new LatLng(lat, lng);
+        CameraUpdate miubicacion = CameraUpdateFactory.newLatLngZoom(coordenadas, 16);
+        if (marcador != null) marcador.remove();
+        marcador = mapa.addMarker(new MarkerOptions()
+                .position(coordenadas)
+                .title("Ubicacion"));
+        mapa.animateCamera(miubicacion);
+    }
 
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(32.4795455,-116.9573151)).title("Casa en venta 2").snippet("Descripcion de la casa"));
+    private void actualizarubicacion(Location location) {
+        if (location != null) {
+            double lat = location.getLatitude();
+            double lng = location.getLongitude();
+            agregarMarcador(lat, lng);
+        }
+    }
 
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(32.4823585,-116.9557446)).title("Casa en venta 2").snippet("Descripcion de la casa"));
+    LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            actualizarubicacion(location);
+        }
+    };
 
-        CameraPosition house = CameraPosition.builder().target(new LatLng(32.4800632,-116.957895)).zoom(18).bearing(8).tilt(45).build();
+    private void miUbicacion() {
+        if (ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this.getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
+        Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+        actualizarubicacion(location);
+        locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER,15000,0, (android.location.LocationListener) locationListener);
+    }
 
-        googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(house));
+    @Override
+    public void onLocationChanged(Location location) {
+
     }
 }

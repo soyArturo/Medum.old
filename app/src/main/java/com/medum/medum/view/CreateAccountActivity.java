@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.medum.medum.R;
 
 public class CreateAccountActivity extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +32,7 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
 
     //[Start auth]
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
     //[End auth]
 
     @Override
@@ -42,11 +44,19 @@ public class CreateAccountActivity extends AppCompatActivity implements View.OnC
         mAuth = FirebaseAuth.getInstance();
         //[End init_auth]
 
-        if(mAuth.getCurrentUser()!=null){
-            finish();
+        mAuthListener= new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user!=null){
+                    finish();
 
-            startActivity(new Intent(getApplicationContext(), ContainerActivity.class));
-        }
+                    startActivity(new Intent(getApplicationContext(), ContainerActivity.class));
+                }
+
+
+            }
+        };
 
         //Text
         textmail = (EditText) findViewById(R.id.mail);

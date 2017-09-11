@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Medum</string>
+    <string name="app_name">medum</string>
     <string name="title_activity_prueba">PruebaActivity</string>
     <string name="hintusername">Username</string>
     <string name="hintpassword">Password</string>
