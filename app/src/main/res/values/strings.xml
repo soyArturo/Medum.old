@@ -38,4 +38,5 @@
     <string name="transition_picture">transition_picture</string>
     <string name="tomar_foto">Tomar Foto</string>
     <string name="hintlastname">Apellidos</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
