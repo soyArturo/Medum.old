@@ -3,21 +3,21 @@
     <tab
         id="@+id/tab_search"
         icon="@drawable/ic_search"
-        title="@string/buscar_tab"
-        barColorWhenSelected="@color/gray"/>
+
+        barColorWhenSelected="@color/colorPrimary"/>
     <tab
         id="@+id/tab_fav"
-        icon="@drawable/fav_selected"
-        title="@string/fav_tab"
-        barColorWhenSelected="#EB0029"/>
+        icon="@drawable/favg"
+
+        barColorWhenSelected="@color/colorPrimary"/>
     <tab
         id="@+id/tab_home"
         icon="@drawable/ic_home"
-        title="@string/home_tab"
-        barColorWhenSelected="@color/gray"/>
+
+        barColorWhenSelected="@color/colorPrimary"/>
     <tab
         id="@+id/tab_profile"
         icon="@drawable/ic_profile"
-        title="@string/profile_tab"
-        barColorWhenSelected="@color/gray"/>
+
+        barColorWhenSelected="@color/colorPrimary"/>
 </tabs>

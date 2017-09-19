@@ -20,6 +20,7 @@ import com.medum.medum.LoginActivity;
 import com.medum.medum.R;
 import com.medum.medum.adapter.PictureAdapterRecyclerView;
 import com.medum.medum.model.Picture;
+import com.medum.medum.view.ProfileDataActivity;
 import com.medum.medum.view.ProfileDetailsActivity;
 
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     private TextView username;
     private ImageView logout;
+    private ImageView profiledata;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -56,10 +58,12 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
         FirebaseUser user = mAuth.getCurrentUser();
         username = (TextView) view.findViewById(R.id.usernameprofile);
         logout = (ImageView) view.findViewById(R.id.logout);
+        profiledata = (ImageView) view.findViewById(R.id.profiledata);
 
         username.setText(user.getEmail());
 
         logout.setOnClickListener(this);
+        profiledata.setOnClickListener(this);
 
         showtoolbar("",false,view);
         RecyclerView cardsRecycler = (RecyclerView) view.findViewById(R.id.cardrecycler);
@@ -92,8 +96,18 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        if(view == logout){
-            startActivity(new Intent(getActivity(), ProfileDetailsActivity.class));
+        switch (view.getId()) {
+            case R.id.logout:
+                startActivity(new Intent(getActivity(), ProfileDetailsActivity.class));
+                break;
+            case R.id.profiledata:
+                Intent intent = new Intent(getActivity(),ProfileDataActivity.class);
+                startActivity(intent);
+                /*ProfileDataFragment profileDataFragment = new ProfileDataFragment();
+                getFragmentManager().beginTransaction().replace(R.id.container,profileDataFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null).commit();*/
+                break;
         }
     }
 }

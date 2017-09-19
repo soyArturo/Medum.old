@@ -21,10 +21,11 @@
             android:layout_height="wrap_content">
             <ImageView
                 android:id="@+id/logouticon"
-                android:layout_width="@dimen/_48sdp"
-                android:layout_height="@dimen/_48sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/logout"
-                android:tint="@color/black"/>
+                android:layout_marginRight="10dp"
+                />
             <TextView
                 android:id="@+id/logouttext"
                 android:layout_width="wrap_content"
@@ -32,6 +33,27 @@
                 android:layout_toRightOf="@id/logouticon"
                 android:text="Cerrar sesion"
                 android:textSize="24sp"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/creditsicon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/code"
+                android:paddingTop="10dp"
+                android:layout_marginRight="10dp"
+                />
+            <TextView
+                android:id="@+id/creditstext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/creditsicon"
+                android:text="Creditos"
+                android:textSize="24sp"
+                android:paddingTop="10dp"
                 android:layout_centerVertical="true"/>
         </RelativeLayout>
     </LinearLayout>

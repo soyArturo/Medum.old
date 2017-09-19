@@ -23,7 +23,7 @@ public class ContainerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_container);
 
         BottomBar bottombar = (BottomBar) findViewById(R.id.bottombar);
-        bottombar.setDefaultTab(R.id.tab_home);
+        bottombar.setDefaultTab(R.id.tab_search);
 
         bottombar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override

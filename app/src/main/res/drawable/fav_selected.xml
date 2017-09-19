@@ -1,6 +1,6 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/favg"
+    <item android:drawable="@drawable/fav"
         android:state_checked="false"></item>
-    <item android:drawable="@drawable/favfill"
+    <item android:drawable="@drawable/favf"
         android:state_checked="true"></item>
 </selector>

@@ -16,6 +16,7 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
     private FirebaseAuth mAuth;
 
     private TextView logout;
+    private TextView credits;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +32,10 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
         }
 
         logout = (TextView) findViewById(R.id.logouttext);
+        credits = (TextView) findViewById(R.id.creditstext);
 
         logout.setOnClickListener(this);
+        credits.setOnClickListener(this);
 
         showtoolbar("Configuracion",true);
 
@@ -48,10 +51,20 @@ public class ProfileDetailsActivity extends AppCompatActivity implements View.On
 
     @Override
     public void onClick(View view) {
-        if(view == logout){
-            mAuth.signOut();
-            getFragmentManager().popBackStack();
-            startActivity(new Intent(this,LoginActivity.class));
+        switch (view.getId()) {
+            case R.id.logouttext:
+                mAuth.signOut();
+                getFragmentManager().popBackStack();
+                startActivity(new Intent(this,LoginActivity.class));
+                break;
+            case R.id.creditstext:
+                Intent intent = new Intent(this,CreditsActivity.class);
+                startActivity(intent);
+                /*ProfileDataFragment profileDataFragment = new ProfileDataFragment();
+                getFragmentManager().beginTransaction().replace(R.id.container,profileDataFragment)
+                        .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                        .addToBackStack(null).commit();*/
+                break;
         }
     }
 }

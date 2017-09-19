@@ -15,7 +15,7 @@
         android:paddingTop="40dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         />
-    
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="@dimen/imagecircle"
         android:layout_height="@dimen/imagecircle"
@@ -29,8 +29,8 @@
         app:dependTargetY="-230dp"
         app:targetX="0dp"
         app:targetY="-15dp"
-        app:targetWidth="40dp"
-        app:targetHeight="40dp"
+        app:targetWidth="36dp"
+        app:targetHeight="36dp"
         />
 
     <android.support.design.widget.AppBarLayout
@@ -56,7 +56,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:paddingBottom="5dp"
                 android:paddingTop="200dp">
 
@@ -67,14 +67,16 @@
                     android:text="@string/username"
                     android:textColor="@android:color/white"
                     android:textSize="30dp"/>
+
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|end"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
-                android:gravity="end"
+                android:gravity="center|end"
                 android:orientation="horizontal"
                 android:paddingBottom="5dp"
                 android:paddingTop="200dp">
@@ -82,7 +84,15 @@
                     android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_action_settings"
+                    android:background="@drawable/settings"
+                    android:backgroundTint="@android:color/white"
+                    />
+                <ImageView
+                    android:id="@+id/profiledata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/account_material"
+
                     />
             </LinearLayout>
 
@@ -95,25 +105,7 @@
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
-    </android.support.design.widget.AppBarLayout>
-    <!-- <TextView
-         android:id="@+id/usernameprofilename"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="Chitobb"
-         android:textSize="18sp"
-         android:elevation="10dp"
-         android:layout_marginLeft="72dp"
-         android:layout_marginTop="-100dp"
-         android:gravity="center_vertical"
-         android:textColor="@android:color/white"
-         android:alpha="0"
-         app:layout_behavior="com.zoonref.SimpleViewBehavior"
-         app:dependsOn="@+id/appbarProfile"
-         app:dependType="y"
-         app:dependTargetY="-250dp"
-         app:targetY="-5dp"
-         app:targetAlpha="1"
-         />-->
 
-    </android.support.design.widget.CoordinatorLayout>
+    </android.support.design.widget.AppBarLayout>
+
+</android.support.design.widget.CoordinatorLayout>
