@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.cast.Cast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,6 +47,7 @@ public class NewPostActivity extends AppCompatActivity {
 
     DatabaseReference databaseHouse;
     FirebaseUser user;
+    Firebase firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
