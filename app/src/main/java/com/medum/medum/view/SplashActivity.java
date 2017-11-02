@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 
 import com.medum.medum.LoginActivity;
 import com.medum.medum.R;
+import com.medum.medum.WelcomeActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -35,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 // Start the next activity
                 Intent mainIntent = new Intent().setClass(
-                        SplashActivity.this, LoginActivity.class);
+                        SplashActivity.this, WelcomeActivity.class);
                 startActivity(mainIntent);
 
                 // Close the activity so the user won't able to go back this

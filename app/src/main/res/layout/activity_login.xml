@@ -105,19 +105,16 @@
                         android:layout_marginLeft="@dimen/_15sdp"
                         android:layout_marginRight="@dimen/_15sdp"
                         />
-
-                    <Button
-                        android:id="@+id/loginFB"
+                    <!--<com.facebook.login.widget.LoginButton
+                        android:id="@+id/button_facebook_login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/buttonlogin"
-                        android:theme="@style/RaisedButtonFB"
-                        android:drawableLeft="@drawable/facebook"
-                        android:drawableStart="@drawable/facebook"
-                        android:drawableTint="@android:color/white"
+                        android:layout_centerInParent="true"
                         android:layout_marginLeft="@dimen/_15sdp"
                         android:layout_marginRight="@dimen/_15sdp"
-                        />
+                        android:textStyle="bold"
+                        />-->
+
                 </LinearLayout>
                 <RelativeLayout
                     android:layout_width="match_parent"

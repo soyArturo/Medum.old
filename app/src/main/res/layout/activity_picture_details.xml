@@ -226,13 +226,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|left"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_margin="32dp"
         android:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
         app:layout_anchor="@+id/dire"
         app:layout_anchorGravity="end|right"
         app:srcCompat="@drawable/chat"
-        app:backgroundTint="@color/colorPrimary"/>
+        app:backgroundTint="@color/colorPrimary"
+        android:tint="@android:color/white"/>
 
     <!--<android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

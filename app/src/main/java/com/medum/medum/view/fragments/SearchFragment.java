@@ -4,6 +4,7 @@ package com.medum.medum.view.fragments;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -29,6 +30,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.medum.medum.R;
+import com.medum.medum.adapter.PictureAdapterRecyclerView;
+import com.medum.medum.view.NewPostActivity;
+import com.medum.medum.view.PictureDetailsActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,10 +42,10 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback, Loca
     private GoogleMap mapa;
     MapView mMapView;
     View mView;
-    Marker marcador;
-    LatLng mycoo;
-    LocationManager locationManager;
-    private boolean permissionGranted;
+    private Marker marcador;
+    double lat=0.0;
+    double lng = 0.0;
+
 
     public SearchFragment() {
         // Required empty public constructor
@@ -63,7 +67,7 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mMapView = (MapView) mView.findViewById(R.id.map);
+        mMapView = mView.findViewById(R.id.map);
         if (mMapView != null) {
             mMapView.onCreate(null);
             mMapView.onResume();
@@ -74,9 +78,23 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback, Loca
     @Override
     public void onMapReady(GoogleMap googleMap) {
         MapsInitializer.initialize(getContext());
-        miUbicacion();
+        //miUbicacion();
         mapa = googleMap;
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(32.530161, -116.987545);
+        mapa.addMarker(new MarkerOptions().position(sydney).title("Casa en venta"));
+        mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,16.0f));
+        mapa.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker arg0) {
+                if(arg0.getTitle().equals("Casa en venta"))
+                    Toast.makeText(getContext(), arg0.getTitle(), Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getActivity(), PictureDetailsActivity.class));
+                return true;
+            }
+        });
     }
 
     private void agregarMarcador(double lat, double lng) {
@@ -109,9 +127,9 @@ public class SearchFragment extends Fragment implements OnMapReadyCallback, Loca
             return;
         }
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
-        Location location = locationManager.getLastKnownLocation(locationManager.GPS_PROVIDER);
+        Location location = locationManager.getLastKnownLocation(locationManager.NETWORK_PROVIDER);
         actualizarubicacion(location);
-        locationManager.requestLocationUpdates(locationManager.GPS_PROVIDER,15000,0, (android.location.LocationListener) locationListener);
+        locationManager.requestLocationUpdates(locationManager.NETWORK_PROVIDER,15000,0, (android.location.LocationListener) locationListener);
     }
 
     @Override

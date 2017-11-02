@@ -4,6 +4,52 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        
+    </style>
+
+    <style name="slides" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="RaisedButtonDark" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/colorPrimaryDark</item>
+        <item name="colorControlHighlight">@color/colorPrimary</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="RaisedButtonFB" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@color/FB</item>
+        <item name="colorControlHighlight">@color/FBH</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <style name="RaisedButtonG" parent="Theme.AppCompat.Light">
+        <item name="colorButtonNormal">@android:color/white</item>
+        <item name="colorControlHighlight">@color/GH</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="Edittextwhite" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+    </style>
+
+    <style name="EdittextDark" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@android:color/black</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <item name="colorAccent">@android:color/black</item>
+        <item name="colorControlNormal">@android:color/black</item>
+        <item name="colorControlActivated">@android:color/black</item>
     </style>
 </resources>

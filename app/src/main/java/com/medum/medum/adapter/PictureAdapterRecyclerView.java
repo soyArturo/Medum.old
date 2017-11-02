@@ -45,7 +45,7 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
     @Override
     public void onBindViewHolder(PictureViewHolder holder, int position) {
         Picture picture = pictures.get(position);
-        holder.titlecard.setText(picture.getTitlecard());
+        holder.titlecard.setText(String.valueOf(picture.getTitlecard()));
         holder.pricecard.setText(picture.getPricecard());
         holder.descriptioncard.setText(picture.getDescriptioncard());
         holder.timecard.setText(picture.getTimecard());

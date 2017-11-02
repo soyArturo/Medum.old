@@ -13,6 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firebase.client.Firebase;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.medum.medum.R;
 import com.medum.medum.adapter.PictureAdapterRecyclerView;
 import com.medum.medum.model.House;
@@ -28,6 +32,8 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     List<House> houses;
+    DatabaseReference databaseReference;
+    FirebaseRecyclerAdapter<Picture,PictureAdapterRecyclerView.PictureViewHolder> pictureAdapterRecyclerView;
 
 
     public HomeFragment() {
@@ -41,6 +47,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         showtoolbar("",false,view);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("houses");
         RecyclerView cardsRecycler = (RecyclerView) view.findViewById(R.id.cardrecycler);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -49,6 +57,27 @@ public class HomeFragment extends Fragment {
         cardsRecycler.setLayoutManager(linearLayoutManager);
 
         PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buildPict(),R.layout.cardview_picture,getActivity());
+        /*pictureAdapterRecyclerView = new FirebaseRecyclerAdapter<Picture, PictureAdapterRecyclerView.PictureViewHolder>(
+                Picture.class,
+                R.layout.cardview_picture,
+                PictureAdapterRecyclerView.PictureViewHolder.class,
+                databaseReference.child("houses")
+        ) {
+
+
+            @Override
+            public PictureAdapterRecyclerView.PictureViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+                return null;
+            }
+
+            @Override
+            protected void onBindViewHolder(PictureAdapterRecyclerView.PictureViewHolder holder, int position, Picture model) {
+
+            }
+
+            protected void populatePictureViewHolder(PictureAdapterRecyclerView.PictureViewHolder pictureViewHolder, Picture picture,
+                                              final int position){}
+        };*/
         cardsRecycler.setAdapter(pictureAdapterRecyclerView);
 
         houses = new ArrayList<>();

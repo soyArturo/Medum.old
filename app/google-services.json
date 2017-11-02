@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "63225974035-qgb673la8eod78rr1t013dt9gdt6k132.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.medum.medum",
+            "certificate_hash": "6687ffe7f01c6e8677fb62929d93293aa5467549"
+          }
+        },
+        {
           "client_id": "63225974035-r6uf2e1eter4069c3jcdcu5j9kiian2k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -29,7 +37,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBGdD9dtBRUE9pg92hOyNU55K2ZRHWegIM"
+          "current_key": "AIzaSyAeFys0peXI2Vx_riV7104N_nXIVutt5iA"
         }
       ],
       "services": {
@@ -40,15 +48,15 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
+              "client_id": "63225974035-37s2u8ljktoha3tp3gls06daabnt0v3e.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
               "client_id": "63225974035-mofdqire0tu14q20ovlqn6ajq385rr22.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
                 "bundle_id": "com"
               }
-            },
-            {
-              "client_id": "63225974035-37s2u8ljktoha3tp3gls06daabnt0v3e.apps.googleusercontent.com",
-              "client_type": 3
             }
           ]
         },
@@ -72,7 +80,7 @@
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBGdD9dtBRUE9pg92hOyNU55K2ZRHWegIM"
+          "current_key": "AIzaSyAeFys0peXI2Vx_riV7104N_nXIVutt5iA"
         }
       ],
       "services": {

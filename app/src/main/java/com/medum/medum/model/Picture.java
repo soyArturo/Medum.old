@@ -1,7 +1,5 @@
 package com.medum.medum.model;
 
-import android.widget.TextView;
-
 /**
  * Created by medum on 8/1/17.
  */

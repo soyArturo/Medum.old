@@ -18,6 +18,8 @@
     <string name="home_tab">Inicio</string>
     <string name="profile_tab">Perfil</string>
     <string name="house_prompt">Que deseas vender?</string>
+    <string name="facebook_app_id">1662964674007272</string>
+    <string name="fb_login_protocol_scheme">fb1662964674007272</string>
 
 
     <array name="typehouses">
@@ -39,4 +41,20 @@
     <string name="tomar_foto">Tomar Foto</string>
     <string name="hintlastname">Apellidos</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="next">Siguiente</string>
+    <string name="skip">Saltar</string>
+    <string name="start">Entendido</string>
+
+    <string name="slide_1_title">Bienvenido a medum!</string>
+    <string name="slide_1_desc">La forma mas sencilla de buscar una casa</string>
+
+    <string name="slide_2_title">Donde mas te guste</string>
+    <string name="slide_2_desc">Sin importar donde estes encuentra una casa a tu alrededor</string>
+
+    <string name="slide_3_title">Nos preocupa tu seguridad</string>
+    <string name="slide_3_desc">Contamos con tramitadores certificados por la AMPI y nosotros, por lo que tu casa esta en buenas manos</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
 </resources>
